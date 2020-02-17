@@ -1,0 +1,18 @@
+C:\TataCommunications\Services
+
+
+
+TCL QA
+https://tclqa.tcura.com/PortalWebAPI/2.0/signalr/hubs
+Vitals
+http://10.33.98.93:5003/TCL.HealthcareExchange.VirtualClinic.CommunicationService/VitalsMessageService.svc
+ECG
+http://10.33.98.93:5003/TCL.HealthcareExchange.VirtualClinic.CommunicationService/ECGMessageService.svc
+
+HL7
+http://10.33.98.93:5003/TCL.HealthcareExchange.VirtualClinic.CommunicationService/HL7MessageService.svc
+Preprod
+https://preprod.tcura.com/PortalWebAPI/2.2/signalr/hubs
+http://10.33.98.101:5003/TCL.HealthcareExchange.VirtualClinic.CommunicationService/VitalsMessageService.svc
+http://10.33.98.101:5003/TCL.HealthcareExchange.VirtualClinic.CommunicationService/HL7MessageService.svc
+http://10.33.98.101:5003/TCL.HealthcareExchange.VirtualClinic.CommunicationService/ECGMessageService.svc
