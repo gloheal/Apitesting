@@ -1,0 +1,272 @@
+{
+	"info": {
+		"_postman_id": "5ee91712-fc62-4f5f-bde0-4cb0290afa58",
+		"name": "JavaScript",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "JavaScriptclass",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "53ae4051-6a73-4b83-abc7-b72c16ca5f6a",
+						"exec": [
+							"//postman.setEnvironmentVariable(\"MyID12\",\"MyTestValue12\")",
+							"//console.log(\"=====>>PrintURL===>>>\"+postman.getEnvironmentVariable(\"MyTestValue\"))",
+							"//postman.clearEnvironmentVariables()",
+							"",
+							"//console.log(\"URL Global Variables crated===>>>\"+postman.setGlobalVariable(\"MyURL\",\"http://localhost:3000\"))",
+							"",
+							"//console.log(\"URL Global Variables crated===>>>\"+postman.getGlobalVariable(\"MyURL\"));"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "90e5747b-cd23-440f-a002-bf15c9a8e3ca",
+						"exec": [
+							"/* console.log(request.data)",
+							"console.log(request.url)",
+							"console.log(request.method)",
+							"",
+							"console.log(responseBody)",
+							"",
+							"json1=JSON.parse(responseBody)",
+							"console.log(json1.title)",
+							"console.log(json1.id)",
+							"",
+							"console.log(\"Responce time=====>>\"+responseTime)",
+							"console.log(\"Responce code=====>>\"+responseCode.code)",
+							"console.log(\"Responce Name=====>>\"+responseCode.name)",
+							"console.log(\"Responce code deatils=====>>\"+responseCode.detail)",
+							"*/"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 1808,\r\n    \"title\": \"The Rock star\",\r\n    \"author\": \"Shehsu\"\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{MyURL}}/posts",
+					"host": [
+						"{{MyURL}}"
+					],
+					"path": [
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "JavaSCript1",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "c41b066d-a34a-4b5a-93ad-b3fa654c89d7",
+						"exec": [
+							"console.log(\"**************Start Creating Request**************************\");",
+							"var data1=100;",
+							"if(data1%2==0){",
+							"    console.log(\"this is  even number\");",
+							"}else",
+							"{",
+							"    console.log(\"this is old number\");",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "cd4a9199-d6a3-4357-bc3b-1e882c2d4c28",
+						"exec": [
+							"for( i=0;i<=10;i++){",
+							"    console.log(i);",
+							"}",
+							"",
+							"console.log(\"while loop\");",
+							"",
+							"i=1",
+							"while(i<=10)",
+							"{",
+							"    console.log(i)",
+							"    i++;",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/posts/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"posts",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "E2E",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n  \"language\": [\r\n    \"Testing1\",\r\n    \"Testing2\"\r\n  ],\r\n  \"yearexp\": \"2018\",\r\n  \"lastused\": \"2020\",\r\n  \"st_id\": \"{{StudentID}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/{{techn}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"{{techn}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "E2E1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d2a9ce54-c7d5-4be9-9615-9ff37746032d",
+						"exec": [
+							"var jsonData =JSON.parse(responseBody)",
+							"console.log(\"The Student ID:\"+jsonData.id)",
+							"postman.setGlobalVariable(\"StudentID\",jsonData.id)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"first_name\": \"Rishika3\",\r\n  \"middle_name\": \"Rishika1\",\r\n  \"last_name\": \"Rishika1\",\r\n  \"date_of_birth\": \"20/12/2020\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/{{Student}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"{{Student}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BasicAuto",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "Rishi47@",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "seshu.babu2@gmail.com",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.github.com/user",
+					"protocol": "https",
+					"host": [
+						"api",
+						"github",
+						"com"
+					],
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Oartho2Auto",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
